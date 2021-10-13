@@ -11,23 +11,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
         {% block head %}
-            <title>Gym Maneger</title>
+            <title>Launchstore</title>
         {% endblock %}
 
     </head>
 
     <body>
-        <header>
-            <div class="links">
-                <a href="/instructors">Instructors</a>
-                <a href="/members">Members</a>
-            </div>
-        </header>
+    {% include "parts/header.njk"%}
 
         {% block content %}{% endblock %}
 
-        <script src="/script.js"></script>
-
+    {% include "parts/footer.njk"%}
+    
     </body>
 
 </html>
