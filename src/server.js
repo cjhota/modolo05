@@ -20,6 +20,6 @@ nunjucks.configure('src/app/views', {
 
 
 server.listen(5000, function() {
-    console.log('Gym Server is Running...')
+    console.log('Launch Server is Running...')
 
 })
