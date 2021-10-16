@@ -37,6 +37,6 @@ const Mask = {
         return new Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-        }).formatToParts(value/100)
+        }).format(value/100)
     }
 }

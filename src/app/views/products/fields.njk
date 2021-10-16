@@ -3,9 +3,9 @@
     <div>
         <select name="category_id">
             {% for category in categories %}
-                <option value="{{ category.id }}" {% if product.category_id == category.id %} selected {% endif %}>
-                    {{ category.name }}
-                </option>
+            <option value="{{ category.id }}" {% if product.category_id == category.id %} selected {% endif %}>
+                {{ category.name }}
+            </option>
             {% endfor %}
         </select>
     </div>
@@ -14,12 +14,12 @@
     <div>Título</div>
     <div>
         <input type="text" name="name" placeholder="Digite o título do anúncio" value="{{ product.name }}"></div>
-    </div>
+</div>
 </div>
 <div class="item">
     <div>Descrição</div>
     <div>
-        <textarea name="description"cols="30" rows="5">{{product.description}}</textarea>
+        <textarea name="description" cols="30" rows="5">{{product.description}}</textarea>
     </div>
 </div>
 
@@ -29,28 +29,32 @@
     <div>Valor</div>
     <div>
 
-        <input type="text" name="price" placeholder="preço do produto" value="{{ product.price }}" onkeydown="Mask.apply(this, 'formatBRL')"></div>
-        
+        <input type="text" name="price" placeholder="preço do produto" value="{{ product.price }}"
+            onkeydown="Mask.apply(this, 'formatBRL')">
     </div>
-    {% if product.old_price %}
-        <input type="hidden" name="old_price" value={{product.old_price}}>
-    {%endif%}
+
+</div>
+{% if product.old_price %}
+<input type="hidden" name="old_price" value={{product.old_price}}>
+{%endif%}
 </div>
 
-{%if product.status%}
 <div class="item">
     <div>Quantidade</div>
     <div>
-        <input type="number" name="quantity" placeholder="Estoque disponível" value="{{ product.quantity }}"></div>
+        <input type="number" name="quantity" placeholder="Estoque disponível" value="{{ product.quantity }}">
     </div>
 </div>
+{%if (product.status == "1") or(product.status =="2") %}
 <div class="item">
     <div>Disponível?</div>
     <div>
         <span>
-            <input type="radio" name="status" value="1" checked="checked" {% if product.status == "1" %} {% endif %}>Sim</span>
-            <span>
-                <input type="radio" name="status" value="0" {% if product.status == "2" %} checked="checked" {% endif %}>Não</span>
-            </div>
-        </div>
-    {%endif%}
+            <input type="radio" name="status" value="1" checked="checked" {% if product.status == "1" %}
+                {% endif %}>Sim</span>
+        <span>
+            <input type="radio" name="status" value="0" {% if product.status == "0" %} checked="checked"
+                {% endif %}>Não</span>
+    </div>
+</div>
+{%endif%}
