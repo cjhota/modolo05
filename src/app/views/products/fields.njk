@@ -48,7 +48,8 @@
 {%if (product.status == "1") or(product.status =="2") %}
 <div class="item">
     <div>Disponível?</div>
-    <div>
+
+<div id="item-grid">
         <span>
             <input type="radio" name="status" value="1" checked="checked" {% if product.status == "1" %}
                 {% endif %}>Sim</span>

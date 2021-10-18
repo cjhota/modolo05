@@ -33,7 +33,7 @@ module.exports = {
     find(id) {
         return db.query('SELECT * FROM products WHERE id = $1', [id])
     },
-    update(date) {
+    update(data) {
         const query = `
             UPDATE products SET 
                 category_id=($1),
